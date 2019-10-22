@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -84,6 +85,11 @@ public class RNIronSourceInterstitialsModule extends ReactContextBaseJavaModule 
             }
         });
         IronSource.loadInterstitial();
+    }
+
+    @ReactMethod
+    public void hasInterstitial(Promise promise) {
+        promise.resolve(IronSource.hasInterstitial());
     }
 
     @ReactMethod

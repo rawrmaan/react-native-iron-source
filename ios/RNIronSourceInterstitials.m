@@ -23,6 +23,13 @@ RCT_EXPORT_METHOD(loadInterstitial)
     [IronSource loadInterstitial];
 }
 
+RCT_EXPORT_METHOD(hasInterstitial:(id)unused
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
+{
+    resolve(@([IronSource hasInterstitial]));
+}
+
 RCT_EXPORT_METHOD(showInterstitial:(NSString*) placementName)
 {
     dispatch_async(dispatch_get_main_queue(), ^{
