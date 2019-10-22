@@ -23,9 +23,9 @@ RCT_EXPORT_METHOD(loadInterstitial)
     [IronSource loadInterstitial];
 }
 
-RCT_EXPORT_METHOD(hasInterstitial:(id)unused
-                  resolver:(RCTPromiseResolveBlock)resolve
-                  rejecter:(RCTPromiseRejectBlock)reject)
+RCT_REMAP_METHOD(hasInterstitial,
+                hasInterstitialWithResolver:(RCTPromiseResolveBlock)resolve
+                rejecter:(RCTPromiseRejectBlock)reject)
 {
     resolve(@([IronSource hasInterstitial]));
 }
