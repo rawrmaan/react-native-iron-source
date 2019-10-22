@@ -89,7 +89,7 @@ public class RNIronSourceInterstitialsModule extends ReactContextBaseJavaModule 
 
     @ReactMethod
     public void hasInterstitial(Promise promise) {
-        promise.resolve(IronSource.hasInterstitial());
+        promise.resolve(IronSource.isInterstitialReady());
     }
 
     @ReactMethod
